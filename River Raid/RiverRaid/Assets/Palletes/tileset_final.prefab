@@ -175,6 +175,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+  - first: {x: 3, y: -1, z: 0}
+    second:
+      m_TileIndex: 21
+      m_TileSpriteIndex: 21
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: 4, y: -1, z: 0}
     second:
       m_TileIndex: 13
@@ -215,6 +224,15 @@ Tilemap:
     second:
       m_TileIndex: 3
       m_TileSpriteIndex: 12
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: 3, y: 0, z: 0}
+    second:
+      m_TileIndex: 20
+      m_TileSpriteIndex: 20
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -307,6 +325,10 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 300c20968a292754aa1966717792df52, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 9a65cca3f83dd6d4da96514eed71609a, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 336b6b12e89a8b64ca5c9ab23253ce59, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: b8891170404205348ad4f243dc63dc2c, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 1409479364479334953, guid: 08a4e3426284b1c4a81b4350c8def340,
@@ -368,8 +390,14 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -9111540217593120884, guid: 08a4e3426284b1c4a81b4350c8def340,
       type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -4649725926205987829, guid: f71b7d576ffc77f4894cfda21683a14f,
+      type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -5499684741649557051, guid: f71b7d576ffc77f4894cfda21683a14f,
+      type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 20
+  - m_RefCount: 22
     m_Data:
       e00: 1
       e01: 0
@@ -388,7 +416,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 20
+  - m_RefCount: 22
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
