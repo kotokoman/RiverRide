@@ -26,9 +26,7 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(trPlayer.position - transform.position), enemyTurn * Time.deltaTime);
-
-            transform.position += transform.forward * enemyChase * Time.deltaTime;
+            transform.position = Vector2.MoveTowards(transform.position, trPlayer.position, enemyChase * Time.deltaTime);
         }
 
        

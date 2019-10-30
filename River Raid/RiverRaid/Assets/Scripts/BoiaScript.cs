@@ -9,19 +9,18 @@ public class BoiaScript : MonoBehaviour
     public Rigidbody2D rb_boia;
     public float timeLimit = 1.5f;
     private float timer = 0;
-
+    private ScoreManager sManager;
     
     void Start()
     {
         rb_boia.velocity = transform.up * speed;
+        sManager = GameObject.Find("Points").GetComponent<ScoreManager>();
     }
 
     private void Update()
     {
-        //Criar uma variável contadora
-        timer += Time.deltaTime; //Atribuir o valor de "timer" com o tempo de atualização dos frames        
-        //Comparar o valor do contador com o tempo limite
-        //Se for igual ou maior...
+        timer += Time.deltaTime; 
+
         if (timer >= timeLimit)
         {
             //Resetar o contador
@@ -37,6 +36,8 @@ public class BoiaScript : MonoBehaviour
         {
             Destroy(c.gameObject);
             Destroy(gameObject);
+
+            sManager.Points = 1;
 
         }
     }
