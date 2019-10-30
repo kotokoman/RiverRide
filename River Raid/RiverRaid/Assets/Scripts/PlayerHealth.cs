@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     public float fuelDecreaser = -2f;
 
     private bool isMorto = false;
+    private bool isWin = false;
 
 
     void OnEnable()
@@ -72,6 +73,10 @@ public class PlayerHealth : MonoBehaviour
             c.gameObject.SetActive(false);
             UseFuel(15f);
         }
+        if (c.gameObject.tag == "Finish")
+        {
+            OnWin();
+        }
     }
 
     public void DecreaseFuel()
@@ -104,6 +109,12 @@ public class PlayerHealth : MonoBehaviour
     {
         isMorto = true;
 
-        FindObjectOfType<SceneManagement>().EndGame();
+        FindObjectOfType<SceneManagement>().LostGame();
+    }
+    void OnWin()           // função executada quando o player morre para mudar a Scene para o Game Over
+    {
+        isWin = true;
+
+        FindObjectOfType<SceneManagement>().WinGame();
     }
 }

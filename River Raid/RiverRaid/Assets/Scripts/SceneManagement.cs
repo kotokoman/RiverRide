@@ -10,13 +10,22 @@ public class SceneManagement : MonoBehaviour
         SceneManager.LoadScene("Gameplay");
     }
 
-    public void EndGame()
+    public void LostGame()
     {
         if (!gameEnded)
         {
             gameEnded = true;
             SceneManager.LoadScene("GameOver");
             
+        }
+    }
+    public void WinGame()
+    {
+        if (!gameEnded)
+        {
+            gameEnded = true;
+            SceneManager.LoadScene("GameWin");
+
         }
     }
 

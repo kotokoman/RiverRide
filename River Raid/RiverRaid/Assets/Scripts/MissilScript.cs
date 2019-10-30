@@ -28,6 +28,7 @@ public class MissilScript : MonoBehaviour
             //Destruir o Game Object
             Destroy(gameObject);
         }
+
     }
 
     private void OnCollisionEnter2D(Collision2D c)
@@ -42,7 +43,7 @@ public class MissilScript : MonoBehaviour
         }
         if (c.gameObject.tag == "Civilian")
         {
-            Destroy(c.gameObject);
+            c.gameObject.SetActive(false);
             Destroy(gameObject);
 
             sManager.Points = -1;
