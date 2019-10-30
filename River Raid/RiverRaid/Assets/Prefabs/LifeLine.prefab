@@ -141,6 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a3f43b26875f1748aa7e6ae822f4cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 2.3
   rb_boia: {fileID: 3399138474207529691}
-  timeLimit: 1.5
+  timeLimit: 1.2

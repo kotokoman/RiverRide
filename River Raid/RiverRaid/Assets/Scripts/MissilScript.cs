@@ -5,7 +5,7 @@ using UnityEngine;
 public class MissilScript : MonoBehaviour
 {
 
-    public float speed = 1.3f;
+    public float speed = 2f;
     public Rigidbody2D rb_missil;
     public float timeLimit = 1.5f;
     private float timer = 0;
@@ -48,6 +48,24 @@ public class MissilScript : MonoBehaviour
             sManager.Points = -1;
 
         }
-    }
+        if (c.gameObject.tag == "Fuel")
+        {
+            Destroy(c.gameObject);
+            Destroy(gameObject);
 
+        }
+        if (c.gameObject.tag == "Bounds")
+        {
+            Destroy(gameObject);
+
+        }
+        if (c.gameObject.tag == "Boia")
+        {
+            Destroy(gameObject);
+            Destroy(c.gameObject);
+
+        }
+    }
 }
+
+

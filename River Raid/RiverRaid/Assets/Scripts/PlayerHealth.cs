@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     private float fuelAtual;
     public float fuelDecreaser = -2f;
 
+    private bool isMorto = false;
+
 
     void OnEnable()
     {
@@ -28,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
         camera = GameObject.Find("Main Camera").GetComponent<CameraControls>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -50,14 +52,14 @@ public class PlayerHealth : MonoBehaviour
         {
             Destroy(gameObject);
 
-            camera.cameraSpeed = 0.0f;
+            OnDeath();
         }
 
         if (c.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
 
-            camera.cameraSpeed = 0.0f;
+            OnDeath();
         }
 
         if (c.gameObject.tag == "Civilian")
@@ -86,15 +88,22 @@ public class PlayerHealth : MonoBehaviour
 
         SetFuelUI();
 
-        /*if (vidaAtual <= 0f && !isMorto)
+        if (fuelAtual <= 0f && !isMorto)
         {
             OnDeath();
-        }*/
+        }
     }
 
     private void SetFuelUI()       // seta o value do slider para o valor da vida atual
     {
         fuelSlider.value = fuelAtual;
 
+    }
+
+    void OnDeath()           // função executada quando o player morre para mudar a Scene para o Game Over
+    {
+        isMorto = true;
+
+        FindObjectOfType<SceneManagement>().EndGame();
     }
 }

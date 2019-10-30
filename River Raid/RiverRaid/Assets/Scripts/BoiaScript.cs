@@ -5,7 +5,7 @@ using UnityEngine;
 public class BoiaScript : MonoBehaviour
 {
 
-    public float speed = 1.3f;
+    public float speed = 2f;
     public Rigidbody2D rb_boia;
     public float timeLimit = 1.5f;
     private float timer = 0;
@@ -38,6 +38,16 @@ public class BoiaScript : MonoBehaviour
             Destroy(gameObject);
 
             sManager.Points = 1;
+
+        }
+        if (c.gameObject.tag == "Bounds")
+        {
+            Destroy(gameObject);
+
+        }
+        if (c.gameObject.tag == "Fuel")
+        {
+            Destroy(gameObject);
 
         }
     }
