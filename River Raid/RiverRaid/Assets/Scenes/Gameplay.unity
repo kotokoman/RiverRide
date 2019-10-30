@@ -20502,6 +20502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boia: {fileID: 3399138474207529691, guid: 6d0281eaf1ea90e4db589d284fc9d96a, type: 3}
+  missil: {fileID: 650283775748186499, guid: 07b8f4b385e94ce45a6cf0803d92a4b6, type: 3}
   saida: {fileID: 3559429816113042664}
 --- !u!1 &1551704548
 GameObject:
@@ -20660,7 +20661,7 @@ GameObject:
   - component: {fileID: 1627207305}
   - component: {fileID: 1627207304}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
