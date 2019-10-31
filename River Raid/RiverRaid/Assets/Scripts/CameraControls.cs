@@ -14,9 +14,9 @@ public class CameraControls : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
 
-            gameObject.transform.Translate(0, 0.1f * (cameraSpeed * thruster), 0);
+            gameObject.transform.Translate(0, 0.1f * cameraSpeed * thruster, 0);   //da um boost de velocidade na camera
         }
 
-        gameObject.transform.Translate(0, 0.1f * cameraSpeed, 0);
+        gameObject.transform.Translate(0, 0.1f * cameraSpeed, 0);  // faz a camera subir continuamente
     }
 }

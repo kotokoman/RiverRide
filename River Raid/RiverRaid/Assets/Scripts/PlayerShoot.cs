@@ -20,11 +20,11 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-    void ShootBoia()  // função para instanciar o projetil na posição e rotação da saída e atribuir a velocidade e direção do projetil
+    void ShootBoia()  // função para instanciar o projetil na posição e rotação da saída
     {
         Instantiate(boia, saida.position, saida.rotation);        
     }
-    void ShootMissil()  // função para instanciar o projetil na posição e rotação da saída e atribuir a velocidade e direção do projetil
+    void ShootMissil()  // função para instanciar o projetil na posição e rotação da saída
     {
         Instantiate(missil, saida.position, saida.rotation);
     }

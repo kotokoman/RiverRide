@@ -10,23 +10,21 @@ public class PlayerHealth : MonoBehaviour
     private ScoreManager sManager;
 
     public Slider fuelSlider;
-    public float fuelInicial = 100f;
+    public float fuelMax = 100f;
     private float fuelAtual;
     public float fuelDecreaser = -2f;
 
     private bool isMorto = false;
-    private bool isWin = false;
-
-
+    
     void OnEnable()
     {
-        fuelAtual = fuelInicial;
+        fuelAtual = fuelMax;    //seta a quantidade de fuel
     }
 
 
     void Start()
     {
-        InvokeRepeating("DecreaseFuel", 0.3f, 0.3f);
+        InvokeRepeating("DecreaseFuel", 0.3f, 0.3f); //chama a função DecreaseFuel a cada 0.3s
         sManager = GameObject.Find("Points").GetComponent<ScoreManager>();
         camera = GameObject.Find("Main Camera").GetComponent<CameraControls>();
     }
@@ -35,12 +33,12 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            fuelDecreaser = fuelDecreaser * 2;
+            fuelDecreaser = fuelDecreaser * 2;  //dobra o gasto de fuel
             
         }
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
         {
-            fuelDecreaser = fuelDecreaser / 2;
+            fuelDecreaser = fuelDecreaser / 2;   //diminui pela metade o gasto de fuel
         }
     }
 
@@ -71,7 +69,7 @@ public class PlayerHealth : MonoBehaviour
         if(c.gameObject.tag == "Fuel")
         {
             c.gameObject.SetActive(false);
-            UseFuel(15f);
+            UseFuel(15f);    //aumenta a quantidade de fuel
         }
         if (c.gameObject.tag == "Finish")
         {
@@ -82,12 +80,11 @@ public class PlayerHealth : MonoBehaviour
     public void DecreaseFuel()
     {
         
-        
-        UseFuel(fuelDecreaser);
+        UseFuel(fuelDecreaser);    //desconta do fuel o valor em fuelDecraser
                 
     }
 
-    public void UseFuel(float amount)    // função com parametro de dano para descontar da vida atual e fazer a verificação se o player ainda está vivo
+    public void UseFuel(float amount)    // função com parametro de dano para descontar do fuel atual e fazer a verificação se o player ainda está vivo
     {
         fuelAtual += amount;
 
@@ -99,7 +96,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void SetFuelUI()       // seta o value do slider para o valor da vida atual
+    private void SetFuelUI()       // seta o value do slider para o valor do fuel atual
     {
         fuelSlider.value = fuelAtual;
 
@@ -111,10 +108,9 @@ public class PlayerHealth : MonoBehaviour
 
         FindObjectOfType<SceneManagement>().LostGame();
     }
-    void OnWin()           // função executada quando o player morre para mudar a Scene para o Game Over
+    void OnWin()           // função executada quando o player morre para mudar a Scene para o Game Win
     {
-        isWin = true;
-
+       
         FindObjectOfType<SceneManagement>().WinGame();
     }
 }

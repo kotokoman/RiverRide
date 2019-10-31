@@ -5,7 +5,7 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    [SerializeField]private TextMeshProUGUI scoreText;
+    private TextMeshProUGUI scoreText;
 
     private int points = 0;   //variavel contadora de pontos
     
@@ -26,7 +26,7 @@ public class ScoreManager : MonoBehaviour
 
     void Awake()
     {
-        scoreText = GameObject.Find("Points").GetComponent<TextMeshProUGUI>();    //definir o componente da variavel de texto
+        scoreText = GameObject.Find("Points").GetComponent<TextMeshProUGUI>();    //referencia ao text de pontos
     }
 
     void UpdatePointsText()

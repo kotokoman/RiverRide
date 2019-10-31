@@ -13,8 +13,8 @@ public class BoiaScript : MonoBehaviour
     
     void Start()
     {
-        rb_boia.velocity = transform.up * speed;
-        sManager = GameObject.Find("Points").GetComponent<ScoreManager>();
+        rb_boia.velocity = transform.up * speed;       //adicionar "movimento" à boia
+        sManager = GameObject.Find("Points").GetComponent<ScoreManager>();  //referenciar o script de pontos
     }
 
     private void Update()

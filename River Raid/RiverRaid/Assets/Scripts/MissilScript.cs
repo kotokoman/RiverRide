@@ -13,8 +13,8 @@ public class MissilScript : MonoBehaviour
     
     void Start()
     {
-        rb_missil.velocity = transform.up * speed;
-        sManager = GameObject.Find("Points").GetComponent<ScoreManager>();
+        rb_missil.velocity = transform.up * speed;     //adiciona "movimento" ao missil
+        sManager = GameObject.Find("Points").GetComponent<ScoreManager>();   
     }
 
     private void Update()
