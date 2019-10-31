@@ -5,9 +5,9 @@ using UnityEngine;
 public class MissilScript : MonoBehaviour
 {
 
-    public float speed = 2f;
+    public float speed = 2.3f;
     public Rigidbody2D rb_missil;
-    public float timeLimit = 1.5f;
+    public float timeLimit = 1.2f;
     private float timer = 0;
     private ScoreManager sManager;
     

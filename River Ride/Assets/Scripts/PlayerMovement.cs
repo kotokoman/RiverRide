@@ -3,7 +3,7 @@
 public class PlayerMovement : MonoBehaviour
 {
 
-    public float movSPD = 1.1f;
+    public float movSPD = 0.2f;
 
     void FixedUpdate()
     {
